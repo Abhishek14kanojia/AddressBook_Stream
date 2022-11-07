@@ -57,7 +57,7 @@ public class PersonContact {
 	}
 	public final void setEmail(String email) {
 		Email = email;
-	}  
+	}   
 	@Override
 	public String toString() {
 		return "PersonContact [FirstName=" + FirstName + ", LastName=" + LastName + ", Address=" + Address + ", City="
