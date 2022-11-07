@@ -107,4 +107,8 @@ public class MultipleAddressbook {
 	            }
 	        }
 	 }
+	public void countPeopleByRegion(HashMap<String, ArrayList<PersonContact>> personbycity) {
+		// TODO Auto-generated method stub
+		
+	}
 }

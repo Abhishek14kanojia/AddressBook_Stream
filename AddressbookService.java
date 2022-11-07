@@ -8,6 +8,8 @@ import java.util.Scanner;
 
 public class AddressbookService {
 
+	public static final HashMap<String, ArrayList<PersonContact>> personByCity = null;
+	public static HashMap<String, ArrayList<PersonContact>> personByState;
 	Scanner sc = new Scanner(System.in);
 	String name;
 	
@@ -206,6 +208,6 @@ public class AddressbookService {
 	            ArrayList<PersonContact> stateList = new ArrayList<ContactPerson>();
 	            stateList.add(contact);
 	            personByState.put(contact.getState(), stateList);
-	        }  
+	        }   
 	    }
 }

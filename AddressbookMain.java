@@ -36,7 +36,27 @@ public class AddressbookMain {
 			case 7:
 				mm.printContactsInBook();
 				break;
-			case 8:
+			 case 8:
+                 mm.searchByCity();
+                 break;
+             case 9:
+                 mm.searchByState();
+                 break;
+             case 10:
+                 mm.displayPeopleByRegion(AddressbookService.personByCity);
+                 break;
+             case 11:
+                 mm.displayPeopleByRegion(AddressbookService.personByState);
+                 break;
+             case 12:
+                 System.out.println("Enter \n1.Display By City\n2.Display By State");
+                 int countChoice = sc.nextInt();
+                 if(countChoice==1)
+                     mm.countPeopleByRegion(AddressbookService.personByCity);
+                 else
+                     mm.countPeopleByRegion(AddressbookService.personByState);
+                 break;
+			case 13:
 				System.exit(0);
 				default: 
 					System.out.println("Error wrong input ");
