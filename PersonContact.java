@@ -7,7 +7,7 @@ public class PersonContact {
 	private String Address;
 	private String City;
 	private String State;
-	private String Zip;
+	private int Zip;
 	private Long PhoneNumber;
 	private String Email;
 	public final String getFirstName() {
@@ -40,10 +40,10 @@ public class PersonContact {
 	public final void setState(String state) {
 		State = state;
 	}
-	public final String getZip() {
+	public final int getZip() {
 		return Zip;
 	}
-	public final void setZip(String zip) {
+	public final void setZip(int zip) {
 		Zip = zip;
 	}
 	public final Long getPhoneNumber() {
@@ -64,6 +64,5 @@ public class PersonContact {
 				+ City + ", State=" + State + ", Zip=" + Zip + ", PhoneNumber=" + PhoneNumber + ", Email=" + Email
 				+ "]";
 	}
-	
 	
 }
