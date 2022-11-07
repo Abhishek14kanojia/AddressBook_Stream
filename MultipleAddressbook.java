@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
+import javax.swing.text.html.HTMLDocument.Iterator;
+
 public class MultipleAddressbook {
 
 	Map<String, AddressbookService> addressmap = new HashMap<>();
@@ -108,7 +110,32 @@ public class MultipleAddressbook {
 	        }
 	 }
 	public void countPeopleByRegion(HashMap<String, ArrayList<PersonContact>> personbycity) {
-		// TODO Auto-generated method stub
-		
-	}
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the name of the region :");
+	        String regionName = sc.next();
+	        long countPeople = listToDisplay.values().stream()
+	                .map(region -> region.stream().filter(person -> person.getState().equals(regionName) || person.getCity().equals(regionName)))
+	                .count();
+
+	        System.out.println("Number of People residing in " + regionName + " are: " + countPeople + "\n");
+		}
+	
+	 public void sortAddressBook() {
+	        for (String i : addressmap.keySet()) {
+	            Map<String, PersonContact> con = (Map<String, PersonContact>) addressmap.get(i).contacts;
+
+	            List<PersonContact> sorted = con.values().stream().sorted((firstperson, secondperson) ->
+	                    firstperson.getFirstName().compareTo(secondperson.getFirstName())).collect(Collectors.toList());
+
+	            System.out.println("------ Sorted Address Book ------");
+	            Iterator iterator = (Iterator) sorted.iterator();
+	            while (((java.util.Iterator<String>) iterator).hasNext()) {
+	                System.out.println(iterator.next());
+	                System.out.println();
+	            }
+	        }
+	 }
 }
+
+
+

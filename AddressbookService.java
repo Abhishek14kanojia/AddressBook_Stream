@@ -209,5 +209,5 @@ public class AddressbookService {
 	            stateList.add(contact);
 	            personByState.put(contact.getState(), stateList);
 	        }   
-	    }
+	    } 
 }
