@@ -188,5 +188,24 @@ public class AddressbookService {
 	        contacts.remove(contact);
 	        System.out.println("The contact has been deleted from the Address Book");
 	    }
-
+	    public void addPersonToCity(PersonContact contact) {
+	        Map<String, AddressbookService> personByCity;
+			if (personByCity.containsKey(contact.getCity())) {
+	            personByCity.get(contact.getCity()).add(contact);
+	        } else {
+	            ArrayList<PersonContact> cityList = new ArrayList<>();
+	            cityList.add(contact);
+	            personByCity.put(contact.getCity(), cityList);
+	        }
+	    }
+	    public void addPersonToState(PersonContact contact) {
+	        List<PersonContact> personByState;
+			if (personByState.containsKey(contact.getState())) {
+	            personByState.get(contact.getState()).add(contact);
+	        } else {
+	            ArrayList<PersonContact> stateList = new ArrayList<ContactPerson>();
+	            stateList.add(contact);
+	            personByState.put(contact.getState(), stateList);
+	        }  
+	    }
 }
